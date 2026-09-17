@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pac-Man // Neon Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="arcade">
+    <header class="topbar">
+      <div class="brand"><span class="brand-dot"></span><span>NEON / ARCADE</span></div>
+      <div class="status"><span class="status-light"></span><span>READY PLAYER ONE</span></div>
+    </header>
+
+    <section class="game-layout" aria-label="Pac-Man game">
+      <div class="intro">
+        <p class="eyebrow">01 / CLASSIC MODE</p>
+        <h1>Pac<span>-</span>Man</h1>
+        <p class="lede">Clear the maze.<br>Keep your nerve.</p>
+        <div class="key-hint"><span class="key-icon">↕</span><span>ARROW KEYS<br>TO MOVE</span></div>
+      </div>
+
+      <div class="machine">
+        <div class="machine-head">
+          <div><span class="label">SCORE</span><strong id="score">000000</strong></div>
+          <div class="machine-center">● INSERT COIN</div>
+          <div class="align-right"><span class="label">HIGH SCORE</span><strong id="high-score">000000</strong></div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="game" width="672" height="672" aria-label="Pac-Man maze"></canvas>
+          <div id="overlay" class="overlay">
+            <span class="overlay-kicker">READY?</span>
+            <button id="start-button">START GAME</button>
+            <span class="overlay-note">PRESS ENTER OR TAP START</span>
+          </div>
+        </div>
+        <div class="machine-foot">
+          <div class="lives" id="lives"><span class="label">LIVES</span><span class="life"></span><span class="life"></span><span class="life"></span></div>
+          <div class="level">LEVEL <strong id="level">01</strong></div>
+          <button id="pause-button" class="pause-button" type="button" aria-label="Pause game">Ⅱ</button>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="side-block">
+          <span class="label">MISSION</span>
+          <p>Eat every dot.<br>Don't get caught.</p>
+        </div>
+        <div class="side-block ghost-guide">
+          <span class="label">ROSTER</span>
+          <div><i class="ghost-swatch red"></i> BLINKY <small>CHASE</small></div>
+          <div><i class="ghost-swatch pink"></i> PINKY <small>AMBUSH</small></div>
+          <div><i class="ghost-swatch cyan"></i> INKY <small>RANDOM</small></div>
+          <div><i class="ghost-swatch orange"></i> CLYDE <small>SHY</small></div>
+        </div>
+        <div class="side-block tip"><span class="label">TIP</span><p>Power pellets turn the tables.</p></div>
+      </aside>
+    </section>
+
+    <div class="mobile-controls" aria-label="Touch controls">
+      <button data-direction="up">↑</button>
+      <div><button data-direction="left">←</button><button data-direction="down">↓</button><button data-direction="right">→</button></div>
+    </div>
+    <footer><span>© 1980 / 2026 NEON ARCADE</span><span>BUILT FOR THE NIGHT SHIFT</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
